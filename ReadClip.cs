@@ -1,12 +1,9 @@
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Data;
 using System;
+using System.Reflection;
+using System.Windows.Forms;
 
 [assembly: AssemblyTitle("ReadClip")]
-[assembly: AssemblyDescription("copies file to clipboard (as a file)")]
+[assembly: AssemblyDescription("reads clipboard text contents and prints it to console")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("rostok - https://github.com/rostok/")]
 [assembly: AssemblyProduct("ReadClip")]
@@ -24,7 +21,7 @@ namespace ReadClip
         [STAThread]
 		static void Main(string[] args)
 		{
-             Console.Write(Clipboard.GetText(TextDataFormat.Text));
+             Console.Write(Clipboard.GetText()); // no TextDataFormat.Text parameter as default returns  UnicodeText 
         }
 	}
 }
